@@ -1,15 +1,47 @@
-CREATE TABLE COVIDDEATHS
-(
+-- The command is used to create a table within a database.
+-- Syntax: CREATE TABLE table_name.
+-- Best Practice while creating a table is by using data constraints, as it acts as a QC before loading the records into the table.
+CREATE TABLE COVIDDEATHS (
+iso_code VARCHAR(30),
+continent VARCHAR(30),
+location varchar(30),
+date DATE,
+population BIGINT,
+total_cases INT,
+new_cases INT,
+new_cases_smoothed FLOAT,
+total_deaths INT,
+new_deaths INT,
+new_deaths_smoothed FLOAT,
+total_cases_per_million FLOAT,
+new_cases_per_million FLOAT,
+new_cases_smoothed_per_million FLOAT,
+total_deaths_per_million FLOAT,
+new_deaths_per_million FLOAT,
+new_deaths_smoothed_per_million FLOAT,
+reproduction_rate FLOAT,
+icu_patients INT,
+icu_patients_per_million FLOAT,
+hosp_patients INT,
+hosp_patients_per_million FLOAT,
+weekly_icu_admissions INT,
+weekly_icu_admissions_per_million FLOAT,
+weekly_hosp_admissions INT,
+weekly_hosp_admissions_per_million FLOAT
+);
+
+-- Syntax: Creating data base using data constraints.
+CREATE TABLE IF NOT EXISTS COVIDDEATHS (
 iso_code VARCHAR(30) NOT NULL,
 continent VARCHAR(30) NOT NULL,
 location varchar(30) NOT NULL,
 date DATE NOT NULL,
 population BIGINT DEFAULT 0,
 total_cases INT DEFAULT 0,
-new_cases int DEFAULT 0,
+new_cases INT DEFAULT 0,
 new_cases_smoothed FLOAT DEFAULT 0,
-total_deaths int DEFAULT 0,
-new_deaths int DEFAULT 0,
+total_deaths INT DEFAULT 0,
+new_deaths INT DEFAULT 0,
 new_deaths_smoothed FLOAT DEFAULT 0,
 total_cases_per_million FLOAT DEFAULT 0,
 new_cases_per_million FLOAT DEFAULT 0,
@@ -18,12 +50,12 @@ total_deaths_per_million FLOAT DEFAULT 0,
 new_deaths_per_million FLOAT DEFAULT 0,
 new_deaths_smoothed_per_million FLOAT DEFAULT 0,
 reproduction_rate FLOAT DEFAULT 0,
-icu_patients int DEFAULT 0,
+icu_patients INT DEFAULT 0,
 icu_patients_per_million FLOAT DEFAULT 0,
-hosp_patients int DEFAULT 0,
+hosp_patients INT DEFAULT 0,
 hosp_patients_per_million FLOAT DEFAULT 0,
-weekly_icu_admissions int DEFAULT 0,
+weekly_icu_admissions INT DEFAULT 0,
 weekly_icu_admissions_per_million FLOAT DEFAULT 0,
-weekly_hosp_admissions int DEFAULT 0,
+weekly_hosp_admissions INT DEFAULT 0,
 weekly_hosp_admissions_per_million FLOAT DEFAULT 0
 );
